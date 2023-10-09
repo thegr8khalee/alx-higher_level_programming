@@ -22,6 +22,6 @@ printf("[*] Allocated = %d\n", alloc);
 for (i = 0; i < size; i++)
 {
 item =  PyList_GetItem(p, i);
-prnitf("Element %d: %s\n", i, Py_TYPE(item)->tp_name);
+printf("Element %d: %s\n", i, Py_TYPE(item)->tp_name);
 }
 }
