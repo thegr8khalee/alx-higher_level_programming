@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <Pyhton.h>
+#include <Python.h>
 
 /**
  * print_python_list_info - ...
