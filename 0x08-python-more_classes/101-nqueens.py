@@ -1,71 +1,62 @@
 #!/usr/bin/python3
 """
-N-Queens Backtracking Algorithm
-
-This program finds and prints all solutions to the N-Queens problem.
-The N-Queens problem is to place N queens on an NxN chessboard such that
-no two queens attack each other. The solutions are printed in the form of
-coordinates (row, column) of queens on the board.
+nqueens backtracking program to print the coordinates of n queens
+on an nxn grid such that they are all in non-attacking positions
 """
+
 
 from sys import argv
 
 if __name__ == "__main__":
-    # Check if the correct number of command line arguments is provided
+    a = []
     if len(argv) != 2:
         print("Usage: nqueens N")
         exit(1)
-    
-    # Check if the argument is a valid positive integer
-    if not argv[1].isdigit():
-        print("N must be a positive integer")
+    if argv[1].isdigit() is False:
+        print("N must be a number")
         exit(1)
-    
     n = int(argv[1])
-    
-    # Ensure N is at least 4 for meaningful solutions
     if n < 4:
         print("N must be at least 4")
         exit(1)
 
-    # Initialize the answer list
-    queens_positions = []
+    # initialize the answer list
     for i in range(n):
-        queens_positions.append([i, None])
+        a.append([i, None])
 
     def already_exists(y):
-        """Check if a queen already exists in the given y position"""
+        """check that a queen does not already exist in that y value"""
         for x in range(n):
-            if y == queens_positions[x][1]:
+            if y == a[x][1]:
                 return True
         return False
 
     def reject(x, y):
-        """Determine whether to reject the solution"""
-        if already_exists(y):
+        """determines whether or not to reject the solution"""
+        if (already_exists(y)):
             return False
         i = 0
-        while i < x:
-            if abs(queens_positions[i][1] - y) == abs(i - x):
+        while(i < x):
+            if abs(a[i][1] - y) == abs(i - x):
                 return False
             i += 1
         return True
 
-    def clear_queens_positions(x):
-        """Clear queens' positions from the point of failure onwards"""
+    def clear_a(x):
+        """clears the answers from the point of failure on"""
         for i in range(x, n):
-            queens_positions[i][1] = None
+            a[i][1] = None
 
     def nqueens(x):
-        """Recursive backtracking function to find solutions"""
+        """recursive backtracking function to find the solution"""
         for y in range(n):
-            clear_queens_positions(x)
+            clear_a(x)
             if reject(x, y):
-                queens_positions[x][1] = y
-                if x == n - 1:  # Solution found, print the coordinates
-                    print([(pos[0], pos[1]) for pos in queens_positions])
+                a[x][1] = y
+                if (x == n - 1):  # accepts the solution
+                    print(a)
                 else:
-                    nqueens(x + 1)  # Move on to the next queen position
+                    nqueens(x + 1)  # moves on to next x value to continue
 
-    # Start the recursive process with the first queen
+    # start the recursive process at x = 0
     nqueens(0)
