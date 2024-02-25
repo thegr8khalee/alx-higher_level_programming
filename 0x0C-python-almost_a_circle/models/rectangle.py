@@ -4,7 +4,6 @@ documented
 """
 from models.base import Base
 
-
 class Rectangle(Base):
     """
     documented
@@ -151,3 +150,4 @@ class Rectangle(Base):
             "x": self.x,
             "y": self.y,
         }
+    
