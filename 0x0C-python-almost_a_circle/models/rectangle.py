@@ -103,26 +103,42 @@ class Rectangle(Base):
         """_summary_"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """_summary_
         """
-        if len(args) == 1:
-            self.id = args[0]
-        elif len(args) == 2:
-            self.width = args[1]
-            self.id = args[0]
-        elif len(args) == 3:
-            self.width = args[1]
-            self.id = args[0]
-            self.height = args[2]
-        elif len(args) == 4:
-            self.x = args[3]
-            self.width = args[1]
-            self.id = args[0]
-            self.height = args[2]
-        elif len(args) == 5:
-            self.y = args[4]
-            self.x = args[3]
-            self.width = args[1]
-            self.id = args[0]
-            self.height = args[2]
+        if not kwargs:
+            if len(args) == 1:
+                self.id = args[0]
+            elif len(args) == 2:
+                self.width = args[1]
+                self.id = args[0]
+            elif len(args) == 3:
+                self.width = args[1]
+                self.id = args[0]
+                self.height = args[2]
+            elif len(args) == 4:
+                self.x = args[3]
+                self.width = args[1]
+                self.id = args[0]
+                self.height = args[2]
+            elif len(args) == 5:
+                self.y = args[4]
+                self.x = args[3]
+                self.width = args[1]
+                self.id = args[0]
+                self.height = args[2]
+        else:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
