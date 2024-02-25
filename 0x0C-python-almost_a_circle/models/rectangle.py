@@ -28,7 +28,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """_summary_"""
-        if type(value) != int:
+        if isinstance(value, int) is False:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -46,7 +46,7 @@ class Rectangle(Base):
         Args:
             value (_type_): _description_
         """
-        if type(value) != int:
+        if isinstance(value, int) is False:
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -64,7 +64,7 @@ class Rectangle(Base):
         Args:
             value (_type_): _description_
         """
-        if type(value) != int:
+        if isinstance(value, int) is False:
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -82,7 +82,7 @@ class Rectangle(Base):
         Args:
             value (_type_): _description_
         """
-        if type(value) != int:
+        if isinstance(value, int) is False:
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
@@ -104,8 +104,7 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
-        """_summary_
-        """
+        """_summary_"""
         if not kwargs:
             if len(args) == 1:
                 self.id = args[0]
@@ -142,3 +141,13 @@ class Rectangle(Base):
                     self.x = v
                 elif k == "y":
                     self.y = v
+
+    def to_dictionary(self):
+        """_summary_"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y,
+        }
