@@ -9,7 +9,6 @@ class Rectangle(Base):
     """
     documented
     """
-
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         documented
@@ -19,3 +18,13 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+    @property
+    def width(self):
+        """_summary_
+        """
+        return self.__width
+    @width.setter
+    def width(self, value):
+        """_summary_
+        """
+        self.__width = value
