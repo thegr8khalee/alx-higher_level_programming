@@ -99,8 +99,4 @@ class Rectangle(Base):
 
     def __str__(self):
         """_summary_"""
-        print(
-            "({}) <{}>/<{}> - <{}>/<{}>".format(
-                self.id, self.x, self.y, self.width, self.height
-            )
-        )
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
