@@ -6,14 +6,16 @@ documented
 
 
 class Rectangle(Base):
-    """_summary_
+    """
+    documented
 
     Args:
         Base (_type_): _description_
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """_summary_
+        """
+        documented
 
         Args:
             width (_type_): _description_
