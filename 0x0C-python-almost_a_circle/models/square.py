@@ -50,19 +50,14 @@ class Square(Rectangle):
                 self.size = args[1]
                 self.id = args[0]
             elif len(args) == 3:
-                self.width = args[1]
+                self.size = args[1]
                 self.id = args[0]
                 self.x = args[2]
             elif len(args) == 4:
                 self.y = args[3]
-                self.width = args[1]
+                self.size = args[1]
                 self.id = args[0]
-                self.height = args[2]
-            elif len(args) == 5:
-                self.x = args[3]
-                self.width = args[1]
-                self.id = args[0]
-                self.height = args[2]
+                self.x = args[2]
         else:
             for k, v in kwargs.items():
                 if k == "id":
