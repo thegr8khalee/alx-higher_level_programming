@@ -3,8 +3,10 @@
 mm
 """
 class Base:
+    """m"""
     __nb_objects = 0
     def __init__(self, id=None):
+        """m"""
         if id is not None:
             self.id = id
         else:
