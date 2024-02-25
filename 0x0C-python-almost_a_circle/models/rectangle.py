@@ -106,21 +106,21 @@ class Rectangle(Base):
     def update(self, *args):
         """_summary_
         """
-        if args == 1:
+        if len(args) == 1:
             self.id = args[0]
-        elif args == 2:
+        elif len(args) == 2:
             self.width = args[1]
             self.id = args[0]
-        elif args == 3:
+        elif len(args) == 3:
             self.width = args[1]
             self.id = args[0]
             self.height = args[2]
-        elif args == 4:
+        elif len(args) == 4:
             self.x = args[3]
             self.width = args[1]
             self.id = args[0]
             self.height = args[2]
-        elif args == 5:
+        elif len(args) == 5:
             self.y = args[4]
             self.x = args[3]
             self.width = args[1]
