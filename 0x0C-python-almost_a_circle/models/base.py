@@ -1,15 +1,17 @@
 #!/usr/bin/python3
 """
-mm
+documented
 """
 class Base:
     """
-    mm
+    documented
+    lorem dcwc fa s
     """
     __nb_objects = 0
     def __init__(self, id=None):
         """
-        mm
+        documented
+        sadc cqerv qec efv v
         """
         if id is not None:
             self.id = id
