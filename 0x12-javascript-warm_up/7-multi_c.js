@@ -1,4 +1,4 @@
-#!/user/bin/node
+#!/usr/bin/node
 const x = Maths.floor(Number(x));
 if (isNaN(x)) {
     console.log('Missing number of occurrences');
