@@ -11,9 +11,9 @@ class Rectangle {
         if (isNaN(size)) {
           console.log('Missing size');
         } else {
-          for (let r = 0; r < height; r++) {
+          for (let r = 0; r < this.height; r++) {
             let row = '';
-            for (let c = 0; c < width; c++) row += 'X';
+            for (let c = 0; c < this.width; c++) row += 'X';
               console.log(row);
           }
         }
