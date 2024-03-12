@@ -8,8 +8,8 @@ class Rectangle {
     }
     print() {
         const size = Math.floor(Number(process.argv[2]));
-        if (isNaN(size)) {
-          console.log('Missing size');
+        if (!this.width || !this.height) {
+            return;
         } else {
           for (let r = 0; r < this.height; r++) {
             let row = '';
@@ -17,7 +17,7 @@ class Rectangle {
               console.log(row);
           }
         }
-      }
+    }
   }
   
   module.exports = Rectangle;
