@@ -1,4 +1,4 @@
-#!/use/bin/node
+#!/usr/bin/node
 let argn = 0;
 
 exports.logMe = function (item) {
