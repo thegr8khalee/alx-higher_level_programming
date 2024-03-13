@@ -6,6 +6,7 @@ class Rectangle {
       this.height = h;
     }
   }
+
   print() {
     const size = Math.floor(Number(process.argv[2]));
     if (!this.width || !this.height) {
@@ -18,6 +19,7 @@ class Rectangle {
       }
     }
   }
+
   double() {
     if (!this.width || !this.height) {
       return;
@@ -26,6 +28,7 @@ class Rectangle {
       this.width = this.width * 2;
     }
   }
+
   rotate() {
     if (!this.width || !this.height) {
       return;
