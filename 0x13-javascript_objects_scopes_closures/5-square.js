@@ -4,7 +4,7 @@ class Square extends Rectangle {
   constructor(size) {
     const len = process.argv.length;
     if (len > 2) {
-        return;
+      return;
     } else {
       super(size, size);
     }
