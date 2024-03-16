@@ -14,7 +14,7 @@ if __name__ == "__main__":
     )
 
     cu = db.cursor()
-    cu.execute("SELECT * FROM cities")
+    cu.execute("SELECT * FROM states, cities")
     rows = cu.fetchall()
     for r in rows:
         print(r)
