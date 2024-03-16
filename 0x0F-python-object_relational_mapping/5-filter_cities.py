@@ -20,11 +20,11 @@ if __name__ == "__main__":
             FROM cities
             INNER JOIN states 
             ON states.id = cities.state_id
-            WHERE cities.name LIKE '%s'
-            ORDER BY cities.id""", (cities_name)
+            WHERE cities.name = %s
+            ORDER BY cities.id""", (cities_name,)
     )
     rows = cu.fetchall()
-    for r in rows:
-        print(r)
+    tmp = list(row[0] for r in rows)
+    print(*tmp, sep=", ")
     cu.close()
     db.close()
