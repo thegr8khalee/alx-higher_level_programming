@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    keys = session.query(State).first():
+    keys = session.query(State).first()
     if keys is None:
         print("Nothing")
     else:
