@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     name = sys.argv[4]
     cu = db.cursor()
-    cu.execute(f"SELECT * FROM states WHERE name = '{name}'")
+    cu.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'".format(sys.argv[4]))
     rows = cu.fetchall()
     for r in rows:
         print(r)
