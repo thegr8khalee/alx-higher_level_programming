@@ -11,6 +11,6 @@ Base = declarative_base(metadata=mymd)
 class State(Base):
     """inherits from Base"""
 
-    __tablename__ = "States"
+    __tablename__ = "states"
     id = id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
