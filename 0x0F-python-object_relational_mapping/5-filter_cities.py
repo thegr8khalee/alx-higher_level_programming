@@ -16,7 +16,7 @@ if __name__ == "__main__":
     cities_name = sys.argv[4]
     cu = db.cursor()
     cu.execute(
-        """SELECT cities.id, cities.name, states.name
+        """SELECT cities.name
             FROM cities
             INNER JOIN states 
             ON states.id = cities.state_id
