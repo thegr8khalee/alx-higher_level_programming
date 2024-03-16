@@ -15,8 +15,7 @@ if __name__ == "__main__":
 
     name = sys.argv[4]
     cu = db.cursor()
-    cu.execute("""SELECT * FROM states WHERE name
-                = %s""", (name))
+    cu.execute(f"SELECT * FROM states WHERE name = '{name}'")
     rows = cu.fetchall()
     for r in rows:
         print(r)
