@@ -24,7 +24,7 @@ if __name__ == "__main__":
             ORDER BY cities.id""", (cities_name,)
     )
     rows = cu.fetchall()
-    tmp = list(row[0] for r in rows)
+    tmp = list(row[0] for row in rows)
     print(*tmp, sep=", ")
     cu.close()
     db.close()
