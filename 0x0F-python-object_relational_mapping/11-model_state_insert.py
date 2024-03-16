@@ -14,12 +14,11 @@ if __name__ == "__main__":
             sys.argv[1], sys.argv[2], sys.argv[3]
         )
     )
-    name = sys.argv[4]
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new = State(name='Louisiana')
+    new = State(name="Louisiana")
     session.add(new)
-    keys = session.query(State).filter(name == 'Louisiana').first()
+    keys = session.query(State).filter(name == "Louisiana").first()
     print(keys.id)
     session.commit()
