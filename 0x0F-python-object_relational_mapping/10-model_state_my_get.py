@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    keys = session.query(State).filter(State.name == name)
+    keys = session.query(State).filter(State.name == (name, ))
     try:
         print(keys[0].id)
     except IndexError:
