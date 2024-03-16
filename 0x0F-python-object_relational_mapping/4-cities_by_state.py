@@ -14,7 +14,9 @@ if __name__ == "__main__":
     )
 
     cu = db.cursor()
-    cu.execute("SELECT * FROM states, cities")
+    cu.execute(
+        "SELECT states.id, states.name, cities.name FROM states INNER JOIN cities ON states.id = cities.state_id"
+    )
     rows = cu.fetchall()
     for r in rows:
         print(r)
