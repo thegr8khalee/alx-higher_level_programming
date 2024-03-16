@@ -18,9 +18,10 @@ if __name__ == "__main__":
     cu.execute(
         """SELECT cities.id, cities.name, states.name
             FROM cities
-            WHERE name LIKE '%s'
             INNER JOIN states 
-            ON states.id = cities.state_id""", (cities_name)
+            ON states.id = cities.state_id
+            WHERE cities.name LIKE '%s'
+            ORDER BY cities.id""", (cities_name)
     )
     rows = cu.fetchall()
     for r in rows:
