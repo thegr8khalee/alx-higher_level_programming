@@ -20,7 +20,7 @@ if __name__ == "__main__":
             FROM cities
             INNER JOIN states 
             ON states.id = cities.state_id
-            WHERE cities.name = %s
+            WHERE states.name = %s
             ORDER BY cities.id""", (cities_name,)
     )
     rows = cu.fetchall()
