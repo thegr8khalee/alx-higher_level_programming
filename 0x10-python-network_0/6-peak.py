@@ -14,7 +14,7 @@ def find_peak(list_of_integers):
             li = list_of_integers
             if (li[mid] >= li[mid - 1] if mid - 1 >= 0 else True) and \
                 (li[mid] >= li[mid + 1] if mid + 1 < length else True):
-                    return li[mid]
+                return li[mid]
             elif li[mid - 1] > li[mid]:
                 return find_peak(li[:mid])
             else:
