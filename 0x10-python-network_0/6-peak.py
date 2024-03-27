@@ -13,9 +13,9 @@ def find_peak(list_of_integers):
 
     if mid - 1 < 0 and mid + 1 >= length:
         return li[m]
-    elif m - 1 < 0:
+    elif mid - 1 < 0:
         return li[mid] if li[mid] > li[mid + 1] else li[mid + 1]
-    elif m + 1 >= length:
+    elif mid + 1 >= length:
         return li[mid] if li[mid] > li[mid - 1] else li[mid - 1]
 
     if li[mid - 1] < li[mid] > li[mid + 1]:
