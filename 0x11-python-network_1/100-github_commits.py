@@ -8,6 +8,7 @@ import requests
 
 
 if __name__ == "__main__":
+    """ <author name>` (one by line)"""
     url = "https://api.github.com/repos/{}/{}/commits".format(sys.argv[2], sys.argv[1])
 
     r = requests.get(url)
